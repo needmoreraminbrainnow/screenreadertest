@@ -29,7 +29,7 @@ namespace ScreenReaderTest.Output
         private static extern void Windows_run();
 
         [DllImport(WINDOWS_ACCESS_BRIDGE, SetLastError = true, ThrowOnUnmappableChar = true, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Auto)]
-        private static extern void setMouseClickedFP([MarshalAs(UnmanagedType.FunctionPtr)]MouseClickedDelegate fp);
+        private static extern void setMouseClickedFP(MouseClickedDelegate fp);
 
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         public delegate void MouseClickedDelegate(System.Int64 vmID, IntPtr jevent, IntPtr ac);
